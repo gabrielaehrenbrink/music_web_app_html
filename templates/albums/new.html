@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Album</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9EC8B9;
+        }
+        h1 {
+            background-color: #1B4242;
+            color: #9EC8B9;
+            padding: 30px;
+            margin: 0;
+            text-align: center;
+        }
+
+        p {
+            background-color: #5C8374;
+            color: #9EC8B9;
+            padding: 15px;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <h1>New Album</h1>
+    <form action="/albums" method="post">
+        {% if errors %}
+            <p class="t-errors">
+                Your submission contains errors:
+                {{errors | join(", ")}}
+            </p>
+        {% endif %}
+      <p>
+
+        <label for="title">Title</label>
+        <br>
+
+        <input type="text" name="title" id="title">
+      </p>
+      <p>
+        <label for="release_year">Release Year</label>
+        <br>
+        <input type="text" name="release_year" id="release_year">
+      </p>
+      <p>
+        <label for="artist_id">Artist id</label>
+        <br>
+        <input type="text" name="artist_id" id="rartist_id">
+      </p>
+      
+      <p>
+        <input type="submit" value="Create Album">
+      </p>
+    </form>
+  </body>
+</html>
